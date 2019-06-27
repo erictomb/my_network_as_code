@@ -8,8 +8,6 @@
           path: configs/
           state: directory
 
-
-
   - name: Generate IOS-XE Router configurations
     connection: local
     hosts: cisco-ios-xe-routers
