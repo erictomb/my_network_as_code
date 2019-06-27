@@ -25,4 +25,5 @@ node {
    stage ('Change Repository') {
        deleteDir()
        checkout scm
+     }
 }
