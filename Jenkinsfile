@@ -21,3 +21,8 @@ node {
 // Ping stuff and make sure we didn't blow up prod!
     }
 }
+node {
+   stage ('Change Repository') {
+       deleteDir()
+       checkout scm
+}
