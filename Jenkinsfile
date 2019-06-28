@@ -1,6 +1,7 @@
 node {
    stage ('Checkout Repository') {
-// Get our repo cloned and prepped for action
+   deleteDir()
+       checkout scm
     }
    stage ('Render Configurations') {
 sh 'ansible-playbook generate_configurations.yaml'
@@ -20,10 +21,4 @@ sh 'ansible-playbook generate_configurations.yaml'
     stage ('Production Functional/Integration Testing') {
 // Ping stuff and make sure we didn't blow up prod!
     }
-}
-node {
-   stage ('Change Repository') {
-       deleteDir()
-       checkout scm
-     }
 }
